@@ -36,7 +36,7 @@
     ./build.sh lunch
     ```
 
-* 修改 DTS (Device Tree Source)
+* 修改 DTS (Device Tree Source) [官網介紹 (強烈推薦先讀過再操作)](https://wiki.luckfox.com/zh/Luckfox-Pico-Zero/Device-Tree)
 
     * 打開 `dts_config`
 
