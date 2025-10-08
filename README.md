@@ -1,5 +1,37 @@
 # LuckFox Pico Zero 操作步驟
 
+## 腳位說明
+
+> 進系統後輸入指令查看
+
+```
+[root@luckfox root]# luckfox-config show
+/usr/bin/luckfox-config: line 262: warning: command substitution: ignored null byte in input
+                                             Luckfox_Pico_Zero
+                                                + - + - +
+         -             -             -      3V3 |       | 5V
+         - I2C2_M0_SCL - UART3_M0_TX - GPIO1_A0 |       | 5V
+ PWM4_M0 - I2C2_M0_SDA - UART3_M0_RX - GPIO1_A1 |       | GND
+ PWM3_M1 -             - UART4_M0_RX - GPIO1_B0 |       | GPIO1_B2 - FIQtty_TX
+         -             -             -      GND |       | GPIO1_B3 - FIQtty_RX
+         -             - UART4_M0_TX - GPIO1_B1 |       | GPIO1_C6 -             -             - PWM10_M1
+ PWM3_M2 -             - UART3_M1_TX - GPIO1_D0 |       | GND
+ PWM10_M2-             - UART3_M1_RX - GPIO1_D1 |       | GPIO2_A7 - UART0_M1_CTS- I2C3_M0_SDA - PWM4_M1
+         -             -             -      3V3 |       | GPIO2_A6 - UART0_M1_RTS- I2C3_M0_SCL - PWM2_M1
+ PWM5_M2 - I2C4_M1_SCL - SPI0_M0_MOSI- GPIO1_C2 |       | GND
+ PWM6_M2 - I2C4_M1_SDA - SPI0_M0_MISO- GPIO1_C3 |       | GPIO1_D3 -             -             - PWM11_M2
+ PWM4_M2 -             - SPI0_M0_CLK - GPIO1_C1 |       | GPIO1_C0 - SPI0_M0_CS0 -             - PWM2_M2
+                                            GND |       | GPIO1_D2 - SPI0_M0_CS1 -             - PWM0_M1
+ PWM6_M1 - I2C1_M1_SDA - UART0_M1_TX - GPIO2_B1 |       | GPIO2_B0 - UART0_M1_RX - I2C2_M1_SCL - PWM5_M1
+         - I2C3_M2_SDA - UART5_M2_RTS- GPIO3_D2 |       | GND      -             -             -
+         - I2C3_M2_SCL - UART5_M2_CTS- GPIO3_D1 |       | GPIO1_C5 - UART4_M1_TX -             - PWM9_M1
+ PWM8_M1 -             - UART4_M1_RX - GPIO1_C4 |       | GND      -             -             -
+ PWM2_M0 -             - UART0_M0_TX - GPIO0_A1 |       | GPIO1_C7 -             -             - PWM11_M1
+         -             - UART0_M0_RX - GPIO0_A0 |       | GPIO0_A3 -             -             -
+         -             -             -      GND |       | GPIO0_A4 -             -             - PWM1_M0
+                                                + - + - +
+```
+
 ## 編譯檔案
 
 * 安裝依賴
