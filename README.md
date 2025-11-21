@@ -40,7 +40,7 @@
     sudo apt-get install repo git ssh make gcc gcc-multilib g++-multilib module-assistant expect g++ gawk texinfo libssl-dev bison flex fakeroot cmake unzip gperf autoconf device-tree-compiler libncurses5-dev pkg-config bc python-is-python3 passwd openssl openssh-server openssh-client vim file cpio rsync
     ```
 
-* 下載 sdk
+* 下載 [官方 sdk](https://github.com/LuckfoxTECH/luckfox-pico.git)
 
     ```
     cd ~
