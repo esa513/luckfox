@@ -76,11 +76,8 @@
         vim ~/luckfox-pico/config/dts_config
         ``` 
 
-    * 添加到最後面
+    * 添加到最後面 (以 AFE4404 為例，此裝置需有 `interrupt-parent` 與 `interrupts` 才會註冊 trigger，才可使用 buffer mode)
         ```
-
-
-        
         /**********I2C**********/
         &i2c4 {
                 status = "okay";
@@ -88,8 +85,13 @@
                 clock-frequency = <100000>;
 
                 afe4404: afe4404@58 {
-                        compatible = "ti,afe4404";
-                        reg = <0x58>;
+                    compatible = "ti,afe4404";
+                    reg = <0x58>;
+
+                    interrupt-parent = <&gpio1>;
+                    interrupts = <RK_PC1 IRQ_TYPE_EDGE_RISING>;
+
+                    reset-gpios = <&gpio1 RK_PD3 GPIO_ACTIVE_LOW>;
                 };
         };
         ```
@@ -340,9 +342,11 @@
     70: -- -- -- -- -- -- -- --
     '
     ls /sys/bus/iio/devices/
-    : iio:device0  iio:device1
+    : iio:device0  iio:device1  trigger0
     cat /sys/bus/iio/devices/iio:device1/name
     : afe4404
+    cat /sys/bus/iio/devices/trigger0/name
+    : afe4404-dev1
     ```
 
 ## 連接裝置的使用說明
