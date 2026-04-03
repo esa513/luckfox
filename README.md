@@ -309,6 +309,12 @@
 > [官網教學](https://wiki.luckfox.com/zh/Luckfox-Pico/SSH-Telnet-Login/#luckfox-picopico-mini-ab-%E7%99%BB%E5%BD%95)
 > 註：adb 連線比 ssh server 更快開啟，有問題可以用 adb 來 debug
 
+- 需修正 /root 資料夾擁有者為 `root`，才可正常使用免密登入
+
+    ```
+    chown root:root /root
+    ```
+
 ## ~~設定 PIN~~
 
 > 不用改
